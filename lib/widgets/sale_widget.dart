@@ -40,7 +40,7 @@ class SaleWidget extends StatelessWidget {
                 children: const [
                   Text(
                     'Hot offer!',
-                    style: TextStyle(color: Colors.amber, fontSize: 28, fontWeight: FontWeight.w700),
+                    style: TextStyle(color: Colors.amber, fontSize: 24, fontWeight: FontWeight.w700),
                   ),
                   SizedBox(
                     height: 10,

@@ -43,7 +43,7 @@ class _HomeScreenState extends State<HomeScreen> {
       child: Scaffold(
         appBar: AppBar(
           elevation: 1,
-          title: const Text('Home'),
+          title: const Text('Tiny-Store'),
           leading: AppBarIcon(
             onPressed: () {
               Navigator.push(
@@ -119,19 +119,11 @@ class _HomeScreenState extends State<HomeScreen> {
                           ),
                         ),
                       ),
-                      Container(
-                        margin: const EdgeInsets.only(left: 10, top: 8, right: 10, bottom: 4),
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(10),
-                          color: Theme.of(context).cardColor,
-                        ),
+                      Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 5),
                         child: Row(
                           children: [
-                            const Padding(
-                              padding: EdgeInsets.only(left: 10),
-                              child:
-                                  Text('Latest Products', style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold)),
-                            ),
+                            const Text('Latest Products', style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
                             const Spacer(),
                             AppBarIcon(
                                 onPressed: () {
@@ -142,7 +134,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                     ),
                                   );
                                 },
-                                icon: Icons.arrow_forward_ios),
+                                icon: Icons.arrow_forward_outlined),
                           ],
                         ),
                       ),

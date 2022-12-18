@@ -18,7 +18,7 @@ class _FeedsScreenState extends State<FeedsScreen> {
   final ScrollController _scrollController = ScrollController();
   int limit = 10;
   bool _isLoading = false;
-  final bool _isLimit = false;
+
   List<ProductsModel> productsList = [];
 
   @override
@@ -35,7 +35,8 @@ class _FeedsScreenState extends State<FeedsScreen> {
   @override
   void didChangeDependencies() {
     _scrollController.addListener(() async {
-      if (_scrollController.position.pixels == _scrollController.position.maxScrollExtent) {
+      if (_scrollController.position.pixels ==
+          _scrollController.position.maxScrollExtent) {
         _isLoading = true;
         limit += 10;
         log('Добавили Лимит $limit');
@@ -72,17 +73,23 @@ class _FeedsScreenState extends State<FeedsScreen> {
                       physics: const NeverScrollableScrollPhysics(),
                       // controller: _scrollController,
                       itemCount: productsList.length,
-                      gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                      gridDelegate:
+                          const SliverGridDelegateWithFixedCrossAxisCount(
                         crossAxisCount: 2,
                         crossAxisSpacing: 0,
                         mainAxisSpacing: 0,
                         childAspectRatio: 0.7,
                       ),
                       itemBuilder: (context, index) {
-                        return ChangeNotifierProvider.value(value: productsList[index], child: const FeedsWidget());
+                        return ChangeNotifierProvider.value(
+                            value: productsList[index],
+                            child: const FeedsWidget());
                       },
                     ),
-                    if (!_isLoading) const Center(child: CircularProgressIndicator(),),
+                    if (!_isLoading)
+                      const Center(
+                        child: CircularProgressIndicator(),
+                      ),
                   ],
                 ),
               ));

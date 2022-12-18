@@ -10,21 +10,18 @@ class FeedsGrid extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      height: 1850,
-      child: GridView.builder(
-          shrinkWrap: true,
-          physics: const NeverScrollableScrollPhysics(),
-          gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-            crossAxisCount: 2,
-            crossAxisSpacing: 0,
-            mainAxisSpacing: 0,
-            childAspectRatio: 0.64,
-          ),
-          itemCount: productsList.length,
-          itemBuilder: (context, index) {
-            return ChangeNotifierProvider.value(value: productsList[index], child: const FeedsWidget());
-          }),
-    );
+    return GridView.builder(
+        shrinkWrap: true,
+        physics: const NeverScrollableScrollPhysics(),
+        gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+          crossAxisCount: 2,
+          crossAxisSpacing: 0,
+          mainAxisSpacing: 0,
+          childAspectRatio: 0.64,
+        ),
+        itemCount: productsList.length,
+        itemBuilder: (context, index) {
+          return ChangeNotifierProvider.value(value: productsList[index], child: const FeedsWidget());
+        });
   }
 }

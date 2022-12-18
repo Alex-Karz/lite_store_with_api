@@ -64,9 +64,12 @@ class _ProductDetailsState extends State<ProductDetails> {
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween, // Можно использовать Flexible вместо этого
                           children: [
-                            Text(
-                              productsDetails!.title.toString(),
-                              style: titleStyle,
+                            SizedBox(
+                              width: size.width * 0.6,
+                              child: Text(
+                                productsDetails!.title.toString(),
+                                style: titleStyle,
+                              ),
                             ),
                             RichText(
                               text: TextSpan(
